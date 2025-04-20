@@ -1,0 +1,136 @@
+"[Basic]
+set nu rnu
+nmap zso :source C:\Users\[your username]\.ideavimrc <CR>
+nmap <A-u> :redo<CR>
+nmap ,c :action NewElementSamePlace<CR>
+nmap zpm :action RiderNuGetManagePackagesForCurrentProjectAction<CR>
+nmap zef :action MethodUp<CR>jz{:<C-u>action SilentCodeCleanup<CR>
+map <C-f11> <Esc>:action GotoTypeDeclaration<CR>
+
+"[Move]
+map <C-right> w
+map <C-left> b
+nmap zzz zzhh<CR>
+imap zzz <Esc>zzz
+
+"[Jump]
+nmap <SPACE> :action AceAction<CR>
+nmap zn :action GotoNextError<CR>
+nmap zN :action GotoPreviousError<CR>
+nmap hh ^
+nmap ll $
+nmap ,m :action FileStructurePopup<CR>
+nmap zf :action GotoDeclaration<CR>:action RdParameterDeclarationNavigationAction<CR>
+imap zf <Esc>zf
+nmap z1 hhf(ww
+nmap zpp f f w
+nmap zip /NotImplementedException<CR>hh
+nmap zx /throw<CR>hh
+map <C-f11> :action GotoTypeDeclaration<CR>
+
+"[Line]
+nmap K f,<C-CR>jhh
+nmap zai Ypk$a,<Esc><CR>
+imap zai <Esc>zai
+nmap <C-CR> mza<CR><Esc>`z
+
+"[Insert]
+nmap zsb A.Should().Be();<Esc>ba
+imap zsb <Esc>zsb
+nmap z, A,<Esc>
+imap z, <Esc>A,
+nmap z; A;<Esc>
+imap z; <Esc>A;
+nmap z. A.<Esc>
+imap z. <Esc>A.
+vmap S :action SurroundWith<CR>
+map zrt <Esc>hhireturn <Esc>z;
+imap zrt <Esc>hhireturn <Esc>z;
+nmap ,g :action Generate<CR>
+nmap zjp hhf{bvt y<Esc>O[JsonProperty("<Esc>pT"~$a")]<Esc>
+imap <Esc>zjp
+nmap zaw hhiawait
+imap zaw <Esc>zaw
+nmap zva hhf=a await <Esc>
+imap zva <Esc>zva
+nmap zcv ^vi":<C-u>action $Paste<CR>
+imap zcv <Esc>zcv
+nmap zth athrow new NotImplementedException();<Esc>
+vmap " <Esc>bi"<Esc>wwi"
+vmap ' <Esc>bi'<Esc>wwi'
+vmap ( <Esc>bi(<Esc>wwi)
+vmap [ <Esc>bi[<Esc>wwi]
+vmap { <Esc>bi{<Esc>wwi}
+vmap < <Esc>bi<<Esc>wwi>
+
+"[Delete]
+nmap zcc ^ci"
+nmap zss ci"
+nmap zb ciw
+vmap zb <Esc>zb
+nmap hc ^C
+
+"[Refactor]
+vmap M :action ExtractMethod<CR>
+map zri :action Inline<CR>
+imap zri <Esc>zri
+map zrv :action IntroduceVariable<CR>
+imap zrv <Esc>zrv
+map zrp :action IntroduceParameter<CR>
+imap zrp <Esc>zrp<Esc>
+map zrf :action IntroduceField<CR>
+imap zrf <Esc>zrf
+map zrr hhcf=return
+imap zrr <Esc>zrr
+
+"[Select]
+nmap z( vi(
+imap z( <Esc>z(
+nmap z) vi)
+imap z) <Esc>z)
+nmap z[ vi]
+imap z[ <Esc>z[
+nmap z] vi]
+imap z] <Esc>z]
+nmap z{ vi{
+imap z{ <Esc>z{
+nmap z} vi}
+imap z} <Esc>z}
+nmap z< vi<
+imap z< <Esc>z<
+nmap z> vi>
+imap z> <Esc>z>
+nmap z" vi"
+imap z" <Esc>z"
+nmap z' vi'
+imap z' <Esc>z'
+nmap z/ F>wvt<
+imap z/ <Esc>z/
+imap <C-x> <Esc>dd
+imap <C-a> <Esc>ma<CR>ggVG
+map vv v^
+
+"[Unit Test]
+nmap zra :action RiderUnitTestRunSolutionAction<CR>:action ActivateUnitTestsToolWindow<CR>
+imap zra <Esc>zra
+nmap zrc ?[Test]<CR>jj]}j:action MethodDown<CR>:action RiderUnitTestRunContextAction<CR>:action ActivateUnitTestsToolWindow<CR><Esc>
+imap zrc <Esc>zrc
+nmap zrm ?[Test<CR>:action MethodDown<CR>:action RiderUnitTestRunContextAction<CR>:action ActivateUnitTestsToolWindow<CR>
+nmap zuu <Esc>:action RiderUnitTestRepeatPreviousRunAction<CR>:action ActivateUnitTestsToolWindow<CR>
+imap zra <Esc>zra
+vmap zra <Esc>zra
+map zuu :action RiderUnitTestRepeatPreviousRunAction<CR>:action ActivateUnitTestsToolWindow<CR>
+imap zuu <Esc>zuu
+nmap zrs dd?class<CR>jo[SetUp]<CR>public<Space>void<Space>SetUp(){<CR>}<Esc>P:action SilentCodeCleanup<CR>
+vmap zrs s<Esc>?class<CR>jo[SetUp]<CR>public<Space>void<Space>SetUp(){<CR>}<Esc>P:action SilentCodeCleanup<CR>
+nmap zrx dd?SetUp<CR>j%P:action ReformatCode<CR>
+nmap <F1> y?\[Test<CR>P/public<CR>$B:action ReformatCode<CR>
+imap <F1> <Esc><F1>
+map zat G?\[Test<CR>jj]}o<F1>zz
+imap zat <Esc>zat
+nmap zpf ?new <CR>cf Substitute.For<I<Esc>f(i><Esc>ma?Substitute<CR>vf)
+imap zpf <Esc>zpf
+
+
+
+
